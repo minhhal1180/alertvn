@@ -1,11 +1,11 @@
 [phases.setup]
-nixPkgs = ["python311", "gcc"]
+nixPkgs = ["python311", "python311Packages.pip", "gcc"]
 
 [phases.install]
-cmds = ["pip install -r backend/requirements.txt"]
+cmds = ["python3 -m pip install -r backend/requirements.txt"]
 
 [phases.build]
-cmds = ["cd backend && python scripts/generate_grid.py && python ml/train.py"]
+cmds = ["cd backend && python3 scripts/generate_grid.py && python3 ml/train.py"]
 
 [start]
-cmd = "cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT"
+cmd = "cd backend && python3 -m uvicorn main:app --host 0.0.0.0 --port $PORT"
