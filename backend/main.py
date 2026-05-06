@@ -15,6 +15,9 @@ logging.basicConfig(level=logging.INFO)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    # Ensure data directory exists (safety net for any working directory)
+    from pathlib import Path
+    (Path(__file__).parent / "data").mkdir(exist_ok=True)
     Base.metadata.create_all(bind=engine)
     from services.ml_service import load_model
     load_model()
