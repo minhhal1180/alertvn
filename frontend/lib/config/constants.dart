@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-// Physical device: uses PC's WiFi IP (192.168.1.95)
-// Emulator: uses 10.0.2.2 (loopback alias)
-const String kBackendUrl = 'http://192.168.1.95:8000';
+// Railway cloud backend - works on any device, any network
+const String kBackendUrl = 'https://alertvn-production.up.railway.app';
 
 // Phu Tho center coordinates
 const double kDefaultLat = 21.35;
