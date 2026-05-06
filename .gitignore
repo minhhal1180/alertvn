@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Secrets - KHÔNG commit
+backend/.env
+alertvn-release.jks
+frontend/android/key.properties
+
+# Database (được tạo khi startup)
+backend/data/alertvn.db
+
+# Flutter build artifacts
+frontend/build/
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/.idea/
+frontend/*.iml
+frontend/android/.gradle/
+frontend/android/.kotlin/
+frontend/android/local.properties
+
+# Android
+*.apk
+*.aab
+*.keystore
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
