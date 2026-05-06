@@ -1,10 +1,11 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
-    "builder": "NIXPACKS"
+    "builder": "NIXPACKS",
+    "buildCommand": "cd backend && python scripts/generate_grid.py && python ml/train.py"
   },
   "deploy": {
-    "startCommand": "cd backend && python3 startup.py && python3 -m uvicorn main:app --host 0.0.0.0 --port $PORT",
+    "startCommand": "cd backend && python startup.py && uvicorn main:app --host 0.0.0.0 --port $PORT",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
   }
